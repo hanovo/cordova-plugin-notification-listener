@@ -142,11 +142,7 @@ public class NotificationListener extends CordovaPlugin {
     private void openSettings() {
         try {
             Intent intent;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-                intent = new Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS);
-            } else {
-                intent = new Intent("android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
-            }
+            intent = new Intent("android.provider.Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS");
             Context context = cordova.getActivity().getApplicationContext();
             context.startActivity(intent);
         } catch (Exception e) {
